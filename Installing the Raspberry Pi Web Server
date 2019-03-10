@@ -1,0 +1,38 @@
+Installing the Raspberry Pi Web Server
+
+1.Firstly, update the Raspberry Pi, so you’re running on the latest packages. You can do this by running the following commands.
+
+sudo apt-get update
+sudo apt-get upgrade
+
+2.Next, we will need to install the apache2 package:
+
+sudo apt-get install apache2 -y
+
+3.Now that’s all you need to do to have the server up and running. To check that it is working you should be able to enter the Pi’s IP address. If you don’t know the IP you can enter the following line:
+
+hostname -I
+
+4.Browse to the IP address in a browser, and you should get a page
+
+5.Now you’re able to edit this basic file by simply entering the following command.
+
+sudo nano /var/www/html/index.html
+
+6.You can now add as many new web pages as you want in the www folder and they will be viewable from the browser.
+
+7.This web server is a very basic server and is great if you want to learn HTML, JS or CSS but if you’re after PHP (Used for dynamic web pages) then read on.
+
+8.To install PHP, we will need first to get the PHP package, so, let’s download the PHP7 module for apache. To do this enter the following.
+
+sudo apt-get install php7.0 libapache2-mod-php7.0 -y
+
+9.Now we can place PHP files in the html folder, and they will be processed and displayed. For example let’s make a file called example.php
+
+sudo nano /var/www/html/example.php
+
+10.In this file add the following:
+
+<?php
+echo "Today's date is ".date('Y-m-d H:i:s');
+?>
